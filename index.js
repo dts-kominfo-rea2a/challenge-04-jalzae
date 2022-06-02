@@ -10,7 +10,7 @@ const dates = [
 
 // TODO: Buatlah fungsi createDate
 const createDate = (array, index) => {
-  let str = "";
+  let str = [];
 
   if (index != undefined) {
     let temp = Date.parse(array[index]) / 1000;
@@ -22,10 +22,12 @@ const createDate = (array, index) => {
   for (i = 0; i < array.length; i++) {
     let temp = Date.parse(array[i]) / 1000;
     let string = temp.toString();
-    str += string + "-";
+    str.push(string);
   }
 
-  return str.slice(0, -1);
+  let sorted = str.sort();
+
+  return sorted.join("-");;
 };
 
 // ! JANGAN DIMODIFIKASI
